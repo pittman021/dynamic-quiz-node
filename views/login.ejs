@@ -1,0 +1,27 @@
+<% include ./partials/header.ejs %>
+
+<div class="container">
+  <div class="col-md-12">
+    <h1>Dynamic Quiz Login</h1>
+  
+    <div class="userAuth">
+      <div class="login">
+        <form action="/login" method="POST">
+          <input type="text" name="username">Username<br>
+          <input type="password" name="password">Password<br>
+          <a class="btn btn-primary btn-lg" href="/">Back</a>
+          <input type="submit" value="login" class="btn btn-primary btn-lg"> 
+          
+        </form>
+       
+      </div>
+    </div>
+
+ </div>
+   
+  </div>
+
+ 
+  
+  <% include ./partials/footer.ejs %>
+ 

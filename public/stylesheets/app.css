@@ -1,0 +1,130 @@
+body {
+
+  background: url('http://localhost/Dynamic%20Quiz/pexels-photo-256046.jpeg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.navbar-default {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+body {
+  font-family:'Fira Sans Extra Condensed', sans-serif;
+  text-align:center;
+}
+
+.userAuth {
+  margin: 0 auto;
+}
+
+input {
+  background: transparent;
+  border-style: solid;
+  border-width: thin;
+}
+
+.signup {
+  width:150px;
+  text-align:left;
+}
+
+.login {
+
+    width:150px;
+    text-align:left;
+    margin:20px auto;
+}
+
+.quiz {
+  font-size:24px;
+  margin-top:25px;
+}
+
+.questions {
+  text-align:left;
+  margin-bottom:25px;
+  margin-left:50px;
+  margin-right:50px;
+  margin-top:25px;
+}
+
+.row-centered {
+    text-align:center;
+}
+
+.col-centered {
+    display:inline-block;
+    float:none;
+}
+
+.choices {
+  text-align:left;
+}
+
+.question {
+  font-size:24px;
+  margin-bottom:10px;
+  margin-top:10px;
+
+}
+
+.answers {
+  font-size:24px;
+  margin-bottom:25px;
+  margin-top:25px;
+}
+
+.hidden {
+  display:none;
+}
+
+.btn {
+  color:#fff;
+}
+
+.btn-primary {
+  background:transparent;
+  border-radius:0px;
+  color: #333;
+  border-color: #333;
+  border-width:2px;
+}
+
+.buttons {
+  text-align:center;
+  margin-bottom:20px;
+}
+
+label {
+  margin-left:10px;
+  font-weight:normal;
+}
+
+#radio label {
+  color: #333;
+  margin-left:10px;
+}
+
+#radio label:hover {
+  color: #F76F1E;
+}
+
+#radio input:checked {
+  color: #F76F1E;
+}
+
+.alert-warning {
+   text-align:center;
+}
+
+.navbar-default .navbar-nav>li>a {
+  color:#000000;
+}
+
+.navbar-default .navbar-brand {
+  color:#000000;
+}
