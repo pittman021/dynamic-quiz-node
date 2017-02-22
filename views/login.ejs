@@ -1,27 +1,16 @@
 <% include ./partials/header.ejs %>
 
 <div class="container">
-  <div class="col-md-12">
-    <h1>Dynamic Quiz Login</h1>
-  
-    <div class="userAuth">
-      <div class="login">
-        <form action="/login" method="POST">
-          <input type="text" name="username">Username<br>
-          <input type="password" name="password">Password<br>
-          <a class="btn btn-primary btn-lg" href="/">Back</a>
-          <input type="submit" value="login" class="btn btn-primary btn-lg"> 
-          
-        </form>
-       
-      </div>
-    </div>
-
+         <form action="/login" method="POST" class="form-auth centered">
+           <h2>Please login</h2>
+           <div class="form-group">
+                 <input type="text" class="form-control" name="username" placeholder="Username">
+           </div>
+           <div class="form-group">
+                 <input type="password" class="form-control" name="password" placeholder="Password">
+           </div>
+            <input type="submit" value="Login" class="btn btn-primary btn-md btn-block"> 
+         </form>
  </div>
-   
-  </div>
 
- 
-  
   <% include ./partials/footer.ejs %>
- 

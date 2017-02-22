@@ -1,16 +1,25 @@
-<% include ./partials/header.ejs %>
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Dynamic Quiz</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>-->
+   <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">-->
+   <!--<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>-->
+   <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>-->
+   <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>-->
+   <link rel="stylesheet" href="/stylesheets/app.css">
+   <!--<link rel+"stylesheet" href="/js/app.js"-->
+   
+  </head>
 
+  <body>
   <div class="container">
-    <div class = "row row-centered">
-      <div class= "col-md-8 col-centered">
-
-    <h1>Dynamic Quiz</h1>
-
-  <div class="buttons">
-    <a href="/login" class="btn btn-primary btn-lg" id="btn-login" value="userAuth">Login</a>
-    <a href="/signup" class="btn btn-primary btn-lg" id="Signup">Signup</a>
-    <div class ="alert-warning hidden"><p>Uh oh, you forgot something...<p></div>
-    </div>
+      <div class="cover centered">
+              <h1>Quizz</h1>
+      <p>A real-time quiz application that lets you create, share, and store your quiz results.</p>
+    <a href="/quizzes" class="btn btn-primary btn-lg">Get Started</a>
+      </div>
   </div>
 
 <% include ./partials/footer.ejs %>
