@@ -1,0 +1,28 @@
+<% include ../partials/header.ejs %>
+
+   <div class="container">
+      <div class="page-header">
+          <h2>Quizz</h2>
+           <p>See your quizzes, your quiz results, and other quizzes</p>
+            <a class="btn btn-primary btn-lg" href="quizzes/new">Create A Quiz</a>
+      </div>
+      <div class="row">
+          <div class="col-md-12">
+           <% quiz.forEach(function(quiz) { %>
+            <div class="card">
+              <div class ="card-block">
+                <a class="card-title" href="/quizzes/<%= quiz.id %>"><%= quiz.title %></a>
+              </div>
+            </div>
+     <% }); %>   
+          </div>
+ 
+          
+ </div>
+
+     
+ </div>
+
+   
+
+<% include ../partials/footer.ejs %>

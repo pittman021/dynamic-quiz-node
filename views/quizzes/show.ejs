@@ -1,0 +1,37 @@
+<% include ../partials/header %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 quiz">
+            <h2 id="welcome"><%= quiz.title %></h2>
+              
+              <form action="/quizzes/<%= quiz._id %>/scores" method="POST">
+                <h4><%= quiz.question %></h4>
+                <% quiz.choices.forEach(function(choice) { %>
+                  <div class="form-check">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="choice" value="<%= choice %>"></input>
+                    <%= choice %>
+                  </label>
+                </div>
+              <%  }); %>
+              <button class="btn btn-primary btn-lg">Submit Score</button>
+              </form>
+    </div>
+    <div class="col-md-6 results">
+        <h2>Quiz Results!</h2>
+              <% quiz.scores.forEach(function(score) { %>
+                <div class="card">
+                    <div class="card-block">
+                      <%= score.author.username %> -- <%= (score.score * 100) + '%' %>
+            </div>
+          </div>
+            <% }); %>
+      </div>
+    </div>
+  </div>
+      </div>
+      <div class ="alert-warning hidden"><p>Uh oh, you forgot something...<p>
+      </div>
+
+<% include ../partials/footer %>

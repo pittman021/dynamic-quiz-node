@@ -13,7 +13,8 @@ var express     = require("express"),
     //requiring routes
 var scoreRoutes    = require("./routes/scores"),
     quizRoutes     = require("./routes/quiz"),
-    indexRoutes    = require("./routes/index");
+    indexRoutes    = require("./routes/index"),
+    userRoutes     = require("./routes/users");
     
 mongoose.connect("mongodb://localhost/dynamic_quiz");
 app.use(express.static("public"));
@@ -46,6 +47,7 @@ app.use(function(req, res, next) {
 app.use("/", indexRoutes);
 app.use("/quizzes", quizRoutes);
 app.use("/quizzes/:id/scores", scoreRoutes);
+app.use("/users", userRoutes);
 
 
 
