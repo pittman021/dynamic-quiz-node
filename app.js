@@ -16,7 +16,8 @@ var scoreRoutes    = require("./routes/scores"),
     indexRoutes    = require("./routes/index"),
     userRoutes     = require("./routes/users");
     
-mongoose.connect("mongodb://localhost/dynamic_quiz");
+// mongoose.connect("mongodb://localhost/dynamic_quiz");
+mongoose.connect("mongodb://tim:grateful87@ds161159.mlab.com:61159/dynamic_quiz");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride("_method"));
