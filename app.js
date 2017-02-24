@@ -1,6 +1,5 @@
 var express     = require("express"),
     app         = express(),
-    flash       = require('connect-flash'),
     bodyParser  = require("body-parser"),
     mongoose    = require("mongoose"),
     passport    = require("passport"),
