@@ -66,3 +66,11 @@ input {
 .alert-warning {
    text-align:center;
 }
+
+.text-center {
+  text-align:center;
+}
+
+.jumbotron {
+  background-color: #fff;
+}

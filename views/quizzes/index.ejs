@@ -1,12 +1,20 @@
 <% include ../partials/header.ejs %>
+<% include ../partials/navbar.ejs %>
 
    <div class="container">
-      <div class="page-header">
-          <h2>Quizz</h2>
-           <p>See your quizzes, your quiz results, and other quizzes</p>
+       <section class="jumbotron text-center">
+          <div class="container">
+            <h3 class="display-4">Quizz</h3>
+            <p>See your quizzes, your quiz results, and other quizzes</p>
             <a class="btn btn-primary btn-lg" href="quizzes/new">Create A Quiz</a>
-      </div>
-      <div class="row">
+            <a class="btn btn-primary btn-lg" href="users/<%= currentUser.id %>">View Your Quizzes</a>
+            
+          </div>
+  </section>
+  
+    
+      <div class="quizzes">
+         <div class="row">
           <div class="col-md-12">
            <% quiz.forEach(function(quiz) { %>
             <div class="card">
@@ -16,13 +24,9 @@
             </div>
      <% }); %>   
           </div>
- 
-          
+ </div>
+      </div>
  </div>
 
-     
- </div>
-
-   
 
 <% include ../partials/footer.ejs %>
