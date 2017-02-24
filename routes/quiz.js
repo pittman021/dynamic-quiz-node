@@ -22,20 +22,6 @@ router.get("/new", middleware.isLoggedIn, function(req, res) {
     res.render("quizzes/new");
 });
 
-router.delete("/:id", function(req,res) {
-    res.send("quiz deleted");
-    // find by id and remove
-    // Quiz.findByIdAndRemove(req.params.id, function(err) {
-    //     if(err) {
-    //         res.redirect("back");
-    // }  else {
-    //     res.redirect("users/" + req.user.id );
-    // }
-// });
-});
-
-
-
 // create a new quiz and store to DB // 
 router.post("/new", middleware.isLoggedIn, function(req,res) {
     console.log(req.user._id);
@@ -73,13 +59,17 @@ router.get("/:id", middleware.isLoggedIn, function(req, res) {
 });
 
 
-
-
-
-
-
-
-
+router.delete("/:id", function(req, res) {
+    // find by id and remove
+    Quiz.findByIdAndRemove(req.params.id, function(err) {
+        if(err) {
+            res.redirect("back");
+    }  else {
+        console.log("quiz deleted");
+        res.redirect("/users/" + req.user.id );
+    }
+});
+});
 
 
 module.exports = router;

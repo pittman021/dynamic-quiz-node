@@ -5,6 +5,7 @@ var express     = require("express"),
     mongoose    = require("mongoose"),
     passport    = require("passport"),
     LocalStrategy = require("passport-local"),
+    methodOverride = require("method-override"),
     User        = require("./models/user"),
     Score       = require("./models/scores"),
     Quiz        = require("./models/quiz"),
@@ -19,6 +20,7 @@ var scoreRoutes    = require("./routes/scores"),
 mongoose.connect("mongodb://localhost/dynamic_quiz");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(methodOverride("_method"));
 app.set("view engine", "ejs");
 
 // FLASH //
