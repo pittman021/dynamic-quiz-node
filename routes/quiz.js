@@ -12,7 +12,7 @@ router.get("/", middleware.isLoggedIn, function(req, res) {
         if(err) {
             console.log(err);
         } else {
-            res.render("quizzes/index", {quiz:quiz, currentUser: req.user});
+            res.render("quizzes/index", {quiz:quiz, currentUser: req.user, message: req.flash("error")});
         }
     });
 });
@@ -24,7 +24,7 @@ router.get("/new", middleware.isLoggedIn, function(req, res) {
 
 // create a new quiz and store to DB // 
 router.post("/new", middleware.isLoggedIn, function(req,res) {
-    console.log(req.user._id);
+    console.log(req.body);
     var title = req.body.title;
     var question = req.body.question;
     var answer = req.body.answer;
@@ -39,8 +39,7 @@ router.post("/new", middleware.isLoggedIn, function(req,res) {
     Quiz.create(newQuiz, function(err, newlyCreated) {
         if(err) {
     } else {
-        console.log(newlyCreated);
-        console.log('quiz created!');
+        req.flash("success", "Quiz Created!");
         res.redirect("/quizzes");
     }
     });
@@ -59,13 +58,13 @@ router.get("/:id", middleware.isLoggedIn, function(req, res) {
 });
 
 
-router.delete("/:id", function(req, res) {
+router.delete("/:id", middleware.isLoggedIn, function(req, res) {
     // find by id and remove
     Quiz.findByIdAndRemove(req.params.id, function(err) {
         if(err) {
             res.redirect("back");
     }  else {
-        console.log("quiz deleted");
+        req.flash("success", "Quiz deleted!");
         res.redirect("/users/" + req.user.id );
     }
 });

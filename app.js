@@ -2,9 +2,11 @@ var express     = require("express"),
     app         = express(),
     bodyParser  = require("body-parser"),
     mongoose    = require("mongoose"),
+    flash       = require("connect-flash"),
     passport    = require("passport"),
     LocalStrategy = require("passport-local"),
     methodOverride = require("method-override"),
+
     User        = require("./models/user"),
     Score       = require("./models/scores"),
     Quiz        = require("./models/quiz"),
@@ -22,11 +24,10 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride("_method"));
 app.set("view engine", "ejs");
+app.use(flash());
+seedDB();
 
-// FLASH //
-//   app.use(express.cookieParser('keyboard cat'));
-//   app.use(express.session({ cookie: { maxAge: 60000 }}));
-//   app.use(flash());
+
 
 // PASSPORT CONFIG //
 app.use(require("express-session")({
@@ -43,6 +44,8 @@ passport.deserializeUser(User.deserializeUser());
 
 app.use(function(req, res, next) {
     res.locals.currentUser = req.user;
+    res.locals.error = req.flash("error");
+    res.locals.success = req.flash("success");
     next();
 });
 
@@ -50,7 +53,6 @@ app.use("/", indexRoutes);
 app.use("/quizzes", quizRoutes);
 app.use("/quizzes/:id/scores", scoreRoutes);
 app.use("/users", userRoutes);
-
 
 
 app.listen(process.env.PORT, process.env.IP, function() {

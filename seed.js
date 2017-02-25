@@ -25,8 +25,8 @@ function seedDB() {
  var newQuiz = new Quiz({
     title: "Dynamic Quiz 1",
     question: "Question 1",
-    choices: ["Option1", "Option2", "Option3"],
-    correctAnswer: "Option2",
+    choices: ["choice1", "choice2", "choice3"],
+    correctAnswer: "choice2",
     scores: []
 
 });
@@ -42,7 +42,7 @@ var newQuiz2 = new Quiz({
     title: "Civil War Quiz",
     question: "Who won the civil war?",
     choices: ["America", "Britian", "Abraham Lincoln"],
-    correctAnswer: "Abraham Lincoln",
+    correctAnswer: "choice3",
     scores: []
 });
 newQuiz2.save(function(err,quiz) {
@@ -57,7 +57,7 @@ var newQuiz3 = new Quiz({
     title: "FB Barcelona Quiz",
     question: "How many champion leagues has FCB won?",
     choices: ["1", "7", "9"],
-    correctAnswer: "9",
+    correctAnswer: "choice3",
     scores: []
 });
 

@@ -28,8 +28,8 @@ router.post("/", function(req ,res) {
                         quiz.scores.push(newScore);
                         quiz.save();
                         console.log(newScore);
-                        console.log('score saved for' + req.user.username);
-                        res.redirect("/quizzes");
+                        req.flash("success", "Score Submitted");
+                        res.redirect("/quizzes/" + req.params.id);
                     }
             });
         }    
