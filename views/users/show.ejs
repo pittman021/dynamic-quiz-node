@@ -6,10 +6,14 @@
 <% quizzes.forEach(function(val) { %>
     <div class="card">
       <div class ="card-block">
-        <a class="card-title" href="/quizzes/<%= val.id %>"><%= val.title %></a>
-        <form id="delete-quiz" action="/quizzes/<%= val._id %>?_method=DELETE" method="POST">
+        <h3 class="card-title"><%= val.title %></h3>
+          <p class="card-text"><%= val.question%></p>
+        <a class="btn btn-primary btn-md" href="/quizzes/<%= val.id %>">View</a>
+        <a class="btn btn-info btn-md twitter" href="https://twitter.com/home?status=View%20my%20Quiz%20on%20Quizz%20at%20https%3A//tim-projects-pittman021.c9users.io/quizzes/<%= val.id %>"><i class="fa fa-twitter" aria-hidden="true"></i> Share on Twitter</a>
+        <form class="delete-quiz inline" action="/quizzes/<%= val._id %>?_method=DELETE" method="POST">
           <button class="btn btn-xs btn-danger">Delete</button>
         </form>
+        
       </div>
     </div>
 <% }); %>

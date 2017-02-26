@@ -29,12 +29,8 @@ router.post("/new", middleware.isLoggedIn, function(req,res) {
     var question = req.body.question;
     var answer = req.body.answer;
     var choices = [req.body.choice1, req.body.choice2, req.body.choice3];
-    var author = {
-        id: req.user._id,
-        username: req.user.username
-    };
     
-    var newQuiz = {title:title, question:question, choices:choices, correctAnswer:answer, author: author};
+    var newQuiz = {title:title, question:question, choices:choices, correctAnswer:answer};
     
     Quiz.create(newQuiz, function(err, newlyCreated) {
         if(err) {
@@ -47,7 +43,7 @@ router.post("/new", middleware.isLoggedIn, function(req,res) {
 });
 
 // SHOW QUIZ // 
-router.get("/:id", middleware.isLoggedIn, function(req, res) {
+router.get("/:id", function(req, res) {
     Quiz.findById(req.params.id).populate("scores").exec(function(err, foundQuiz) {
         if(err) {
             console.log(err); 

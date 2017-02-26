@@ -43,24 +43,7 @@ input {
 }
 
 .hidden {
-  display:none;
-}
-
-.btn {
-  color:#fff;
-}
-
-.btn-primary {
-  background:transparent;
-  border-radius:0px;
-  color: #333;
-  border-color: #333;
-  border-width:2px;
-}
-
-.buttons {
-  text-align:center;
-  margin-bottom:20px;
+  display: none;
 }
 
 .alert-warning {
@@ -73,4 +56,12 @@ input {
 
 .jumbotron {
   background-color: #fff;
+}
+
+.inline {
+  display: inline;
+}
+
+.twitter {
+  background-color: #1dcaff;
 }

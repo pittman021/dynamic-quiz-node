@@ -6,7 +6,6 @@ var express     = require("express"),
     passport    = require("passport"),
     LocalStrategy = require("passport-local"),
     methodOverride = require("method-override"),
-
     User        = require("./models/user"),
     Score       = require("./models/scores"),
     Quiz        = require("./models/quiz"),
@@ -25,7 +24,6 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride("_method"));
 app.set("view engine", "ejs");
 app.use(flash());
-seedDB();
 
 
 

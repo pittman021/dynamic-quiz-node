@@ -8,6 +8,11 @@ This runs on Node.js, Express, Passport, MongoDB.
 // Change how we are saving scores to match updated model // DONE
 // Setup view user quizzes view and route // DONE
 // Delete quiz routes and view // DONE
-// Setup flash // 
+// Setup flash // DONE
+// Setup Twitter sharing //
+// Build aggregate results // 
+// remove authentication for quizzes route // 
+// Build charts for results // 
+// add ability to create unlimited options // 
 
 

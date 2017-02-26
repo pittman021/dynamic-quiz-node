@@ -22,8 +22,6 @@ router.post("/", function(req ,res) {
                                 result = 0;
                             }
                         newScore.score = result;
-                        newScore.author.id = req.user._id;
-                        newScore.author.username = req.user.username;
                         newScore.save();
                         quiz.scores.push(newScore);
                         quiz.save();
