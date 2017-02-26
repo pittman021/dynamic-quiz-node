@@ -9,9 +9,9 @@ This runs on Node.js, Express, Passport, MongoDB.
 // Setup view user quizzes view and route // DONE
 // Delete quiz routes and view // DONE
 // Setup flash // DONE
-// Setup Twitter sharing //
+// Setup Twitter sharing // DONE
+// remove authentication for quizzes route // DONE
 // Build aggregate results // 
-// remove authentication for quizzes route // 
 // Build charts for results // 
 // add ability to create unlimited options // 
 
