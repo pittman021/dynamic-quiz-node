@@ -11,7 +11,7 @@ This runs on Node.js, Express, Passport, MongoDB.
 // Setup flash // DONE
 // Setup Twitter sharing // DONE
 // remove authentication for quizzes route // DONE
-// Build aggregate results // 
+// Build aggregate results // In Progress
 // Build charts for results // 
 // add ability to create unlimited options // 
 
