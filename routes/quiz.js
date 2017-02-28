@@ -22,19 +22,23 @@ router.get("/new", middleware.isLoggedIn, function(req, res) {
     res.render("quizzes/new");
 });
 
-// create a new quiz and store to DB // 
+// Create a new quiz and store to DB // 
 router.post("/new", middleware.isLoggedIn, function(req,res) {
-    console.log(req.body);
     var title = req.body.title;
     var question = req.body.question;
     var answer = req.body.answer;
-    var choices = [req.body.choice1, req.body.choice2, req.body.choice3];
-    
+    console.log(req.body);
+    var choices = [];
+     // Loop through x number of choices //  
+    for (var i = 0; i < req.body.choice.length; i++) {
+        choices.push(req.body.choice[i]);
+    }
     var newQuiz = {title:title, question:question, choices:choices, correctAnswer:answer};
     
     Quiz.create(newQuiz, function(err, newlyCreated) {
         if(err) {
     } else {
+        console.log(newlyCreated);
         req.flash("success", "Quiz Created!");
         res.redirect("/quizzes");
     }
