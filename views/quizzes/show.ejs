@@ -23,18 +23,12 @@
     </div>
     <div class="col-md-6 results">
         <h2>Quiz Results!</h2>
-              <% quiz.scores.forEach(function(score) { %>
                 <div class="card">
                     <div class="card-block">
-                      <%= (score.score * 100) + '%' %>
-            </div>
-          </div>
-            <% }); %>
-      </div>
-    </div>
+                      <h4>Scores: <%= quiz.scores.length %></h4>
+                      <h4>Average Score: <%= avg %>%</h4>
+   </div>
   </div>
-      </div>
-      <div class ="alert-warning hidden"><p>Uh oh, you forgot something...<p>
-      </div>
+</div>
 
 <% include ../partials/footer %>

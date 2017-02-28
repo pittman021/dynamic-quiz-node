@@ -1,23 +1,33 @@
 <% include ../partials/header %>
 <% include ../partials/navbar %>
 
-<h1>this is the header to the show route</h1>
- <ul>
-<% quizzes.forEach(function(val) { %>
-    <div class="card">
-      <div class ="card-block">
-        <h3 class="card-title"><%= val.title %></h3>
-          <p class="card-text"><%= val.question%></p>
-        <a class="btn btn-primary btn-md" href="/quizzes/<%= val.id %>">View</a>
-        <a class="btn btn-info btn-md twitter" href="https://twitter.com/home?status=View%20my%20Quiz%20on%20Quizz%20at%20https%3A//tim-projects-pittman021.c9users.io/quizzes/<%= val.id %>"><i class="fa fa-twitter" aria-hidden="true"></i> Share on Twitter</a>
-        <form class="delete-quiz inline" action="/quizzes/<%= val._id %>?_method=DELETE" method="POST">
-          <button class="btn btn-xs btn-danger">Delete</button>
-        </form>
-        
+<div class="container">
+      <section class="jumbotron text-center">
+          <div class="container">
+            <h3 class="display-4">Your Quizzes</h3>
+            <p>View, share, and manage your quizzes</p>
+  <hr>
+  <% if (quizzes && quizzes.length > 0) { %>
+     <% quizzes.forEach(function(val) { %>
+        <div class="card">
+          <div class ="card-block">
+            <h3 class="card-title"><%= val.title %></h3>
+              <p class="card-text"><%= val.question%></p>
+                <a class="btn btn-primary btn-md" href="/quizzes/<%= val.id %>">View</a>
+                <a class="btn btn-info btn-md twitter" href="https://twitter.com/home?status=View%20my%20Quiz%20on%20Quizz%20at%20https%3A//tim-projects-pittman021.c9users.io/quizzes/<%= val.id %>"><i class="fa fa-twitter" aria-hidden="true"></i> Share on Twitter</a>
+            <form class="delete-quiz inline" action="/quizzes/<%= val._id %>?_method=DELETE" method="POST">
+              <button class="btn btn-xs btn-danger">Delete</button>
+            </form>
       </div>
     </div>
-<% }); %>
-</ul>
+<% }); } else { %>
+  <h4>No quizzes at this time</h4>
+      <a class="btn btn-primary btn-md" href="/quizzes">Get Started</a>
+  <% } %>
+</div>
+  
+</div>
+
 
 <% include ../partials/footer.ejs %>
 

@@ -18,7 +18,10 @@
            <% quiz.forEach(function(quiz) { %>
             <div class="card">
               <div class ="card-block">
-                <a class="card-title" href="/quizzes/<%= quiz.id %>"><%= quiz.title %></a>
+                <h4 class="card-title"><%= quiz.title %></h4>
+                <h6 class="card-subtitle mb-2 text-muted"><%= quiz.author.username %></h6>
+                <p class="card-text"><%= quiz.question %></p>
+                <a href="/quizzes/<%= quiz.id %>">Take Quiz</a>
               </div>
             </div>
      <% }); %>   

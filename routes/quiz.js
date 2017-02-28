@@ -27,13 +27,17 @@ router.post("/new", middleware.isLoggedIn, function(req,res) {
     var title = req.body.title;
     var question = req.body.question;
     var answer = req.body.answer;
-    console.log(req.body);
     var choices = [];
+    var author = {
+        id: req.user._id,
+        username: req.user.username
+    };
+
      // Loop through x number of choices //  
     for (var i = 0; i < req.body.choice.length; i++) {
         choices.push(req.body.choice[i]);
     }
-    var newQuiz = {title:title, question:question, choices:choices, correctAnswer:answer};
+    var newQuiz = {title:title, question:question, choices:choices, correctAnswer:answer, author:author};
     
     Quiz.create(newQuiz, function(err, newlyCreated) {
         if(err) {
@@ -52,7 +56,11 @@ router.get("/:id", function(req, res) {
         if(err) {
             console.log(err); 
         } else {
-            res.render("quizzes/show", {quiz: foundQuiz});
+            for (var i = 0, sum = 0; i < foundQuiz.scores.length; i++) {
+                sum += foundQuiz.scores[i].score;
+            }
+            var avg = Math.round(sum / foundQuiz.scores.length * 100);
+            res.render("quizzes/show", {quiz: foundQuiz, avg: avg});
         }
     });
 });
