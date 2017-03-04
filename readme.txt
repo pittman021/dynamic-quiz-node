@@ -12,7 +12,7 @@ This runs on Node.js, Express, Passport, MongoDB.
 // Setup Twitter sharing // DONE
 // remove authentication for quizzes route // DONE
 // Build aggregate results // In Progress
-// Build charts for results // 
-// add ability to create unlimited options // 
+// Build charts for results // DONE
+// add ability to create unlimited options // DONE
 
 
