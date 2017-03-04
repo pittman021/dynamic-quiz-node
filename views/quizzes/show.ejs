@@ -3,7 +3,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-6 quiz">
+    <div class="col-md-5 quiz">
             <h2 id="welcome"><%= quiz.title %></h2>
               
               <form action="/quizzes/<%= quiz._id %>/scores" method="POST">
@@ -21,14 +21,27 @@
               <button class="btn btn-primary btn-lg">Submit Score</button>
               </form>
     </div>
-    <div class="col-md-6 results">
+    <div class="col-md-7 results">
         <h2>Quiz Results!</h2>
-                <div class="card">
-                    <div class="card-block">
-                      <h4>Scores: <%= quiz.scores.length %></h4>
-                      <h4>Average Score: <%= avg %>%</h4>
-   </div>
-  </div>
+            <div class="chart">
+              <canvas id="mychart" width="400" height="200"></canvas>
+              
+               
+            </div>
+            <!--<div class="card">-->
+            <!--    <div class="card-block">-->
+            <!--      <h4>Scores: <%= quiz.scores.length %></h4>-->
+            <!--      <h4>Average Score: >%</h4>-->
+            <!--    </div>-->
+            <!--  </div>-->
+            <!--<div class="card">-->
+            <!--  <div class="card-block">-->
+            <!--    <h4 class="card-title">Comments</h4>-->
+            <!--     <p>Coming Soon!</p>-->
+            <!--    </div>-->
+            <!--  </div>-->
+    </div>
 </div>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.min.js"></script>
+<script src="/js/scores.js"></script>
 <% include ../partials/footer %>

@@ -25,7 +25,6 @@ router.post("/", function(req ,res) {
                         newScore.save();
                         quiz.scores.push(newScore);
                         quiz.save();
-                        console.log(newScore);
                         req.flash("success", "Score Submitted");
                         res.redirect("/quizzes/" + req.params.id);
                     }
@@ -33,5 +32,20 @@ router.post("/", function(req ,res) {
         }    
     });
 });
+
+router.get("/", function (req, res) {
+    Quiz.findById(req.params.id).populate("scores").exec(function(err, foundQuiz) {
+        if(err) {
+            console.log(err);
+        } else {
+            var data = [];
+            foundQuiz.scores.forEach(function(score) {
+                data.push(score["score"]);
+            });
+            res.send(data);
+        }
+    });
+});
+
 
 module.exports = router; 

@@ -42,9 +42,8 @@ router.post("/new", middleware.isLoggedIn, function(req,res) {
     Quiz.create(newQuiz, function(err, newlyCreated) {
         if(err) {
     } else {
-        console.log(newlyCreated);
         req.flash("success", "Quiz Created!");
-        res.redirect("/quizzes");
+        res.redirect("/quizzes/:id");
     }
     });
 
@@ -52,15 +51,11 @@ router.post("/new", middleware.isLoggedIn, function(req,res) {
 
 // SHOW QUIZ // 
 router.get("/:id", function(req, res) {
-    Quiz.findById(req.params.id).populate("scores").exec(function(err, foundQuiz) {
+    Quiz.findById(req.params.id, function(err, foundQuiz) {
         if(err) {
             console.log(err); 
         } else {
-            for (var i = 0, sum = 0; i < foundQuiz.scores.length; i++) {
-                sum += foundQuiz.scores[i].score;
-            }
-            var avg = Math.round(sum / foundQuiz.scores.length * 100);
-            res.render("quizzes/show", {quiz: foundQuiz, avg: avg});
+            res.render("quizzes/show", {quiz: foundQuiz});
         }
     });
 });
